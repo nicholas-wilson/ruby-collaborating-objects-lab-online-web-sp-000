@@ -13,10 +13,15 @@ class Song
 
   def self.new_by_filename(filename)
     song = self.new((filename.split(" - ")[1]))
-
+    song
   end
 
   def artist_name=(name)
-    self.artist.name = name
+    Artist.all.each do |singer|
+      if singer.name == name
+        self.artist = singer
+      end
+    end
+    self.artist.name
   end
 end
