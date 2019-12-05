@@ -13,7 +13,6 @@ class Song
 
   def self.new_by_filename(filename)
     song_info = filename.split(" - ")
-    puts song_info[0]
     song = Song.new(song_info[1])
     artist = Artist.find_or_create_by_name(song_info[0])
     song.artist = artist
