@@ -39,4 +39,12 @@ class Artist
     end
     guy
   end
+
+  def print_songs
+    songs = []
+    self.songs.each do |song|
+      songs << song.name
+    end
+    puts songs
+  end
 end
