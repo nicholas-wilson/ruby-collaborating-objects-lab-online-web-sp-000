@@ -17,9 +17,15 @@ class Song
   end
 
   def artist_name=(name)
+    found = false
     Artist.all.each do |singer|
       if singer.name == name
         self.artist = singer
+        found = true
+      end
+      if !found
+        guy = Artist.new(name)
+        self.artist = guy
       end
     end
     self.artist.name
