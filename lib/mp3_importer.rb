@@ -5,7 +5,7 @@ class MP3Importer
   end
 
   def files
-    files_with_path = Dir["#{@path}**/*.mp3"]
+    @files = Dir["#{@path}**/*.mp3"]
     files_with_path.each do |file|
       puts (File.basename(file))
       @files << File.basename(file)
