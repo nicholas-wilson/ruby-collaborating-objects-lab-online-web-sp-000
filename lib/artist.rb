@@ -24,4 +24,19 @@ class Artist
   def add_song(song)
     song.artist = self
   end
+
+  def self.find_or_create_by_name(artist_name)
+    found = false
+    guy = nil
+    self.all.each do |artist|
+      if artist.name == artist_name
+        guy = artist
+        found = true
+      end
+    end
+    if !found
+      guy = Artist.new(artist_name)
+    end
+    guy
+  end
 end
