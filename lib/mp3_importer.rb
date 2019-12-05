@@ -8,6 +8,7 @@ class MP3Importer
     @files = Dir["#{@path}**/*.mp3"]
     @files.each do |file|
       file = File.basename("#{file}.mp3")
+      puts "#{file} and #{@files}"
     end
   end
 
