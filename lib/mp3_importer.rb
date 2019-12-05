@@ -8,7 +8,7 @@ class MP3Importer
     @files = Dir["#{@path}**/*.mp3"]
     @files.each do |file|
       puts (File.basename(file))
-      @files << File.basename(file)
+      @files << File.basename("#{file}.mp3")
     end
   end
 
